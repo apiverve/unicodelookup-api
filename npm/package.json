@@ -1,0 +1,35 @@
+{
+  "name": "@apiverve/unicodelookup",
+  "version": "1.1.12",
+  "description": "Unicode Character Lookup is a tool for retrieving detailed information about Unicode characters. It provides codepoint, UTF-16 encoding, category, and emoji name information.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/unicodelookup-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "unicode", "unicode lookup", "character lookup", "unicode info", "codepoint"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/unicodelookup-api/issues"
+  },
+  "homepage": "https://apiverve.com/marketplace/unicodelookup?utm_source=npm",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
