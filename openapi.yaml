@@ -1,0 +1,78 @@
+openapi: 3.0.4
+info:
+  title: Unicode Character Lookup
+  description: Unicode Character Lookup is a tool for retrieving detailed information about Unicode characters. It provides codepoint, UTF-16 encoding, category, and emoji name information.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/unicodelookup:
+    get:
+      summary: Lookup Character
+      description: Unicode Character Lookup is a tool for retrieving detailed information about Unicode characters. It provides codepoint, UTF-16 encoding, category, and emoji name information.
+      operationId: unicodelookup
+      parameters:
+      - name: character
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The Unicode character to lookup
+        example: "\U0001F44B"
+      - name: codepoint
+        in: query
+        schema:
+          type: string
+        required: false
+        description: The Unicode codepoint in hex (e.g., '1F44B' or 'U+1F44B')
+        example: 1F44B
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  character: �
+                  codepoint: U+D83D
+                  decimal: 55357
+                  hex: D83D
+                  utf16: \uD83D
+                  category: Control
+                  name: 
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
