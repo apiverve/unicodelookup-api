@@ -1,0 +1,59 @@
+/**
+ * Unicode Character Lookup API - Basic Usage Example
+ *
+ * This example demonstrates the basic usage of the Unicode Character Lookup API.
+ * API Documentation: https://docs.apiverve.com/ref/unicodelookup
+ */
+
+const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
+const API_URL = 'https://api.apiverve.com/v1/unicodelookup';
+
+/**
+ * Make a GET request to the Unicode Character Lookup API
+ */
+async function callUnicodeCharacterLookupAPI() {
+  try {
+    // Query parameters
+    const params &#x3D; new URLSearchParams({
+            character: &#x27;👋&#x27;,
+            codepoint: &#x27;1F44B&#x27;
+        });
+
+    const response = await fetch(`${API_URL}?${params}`, {
+      method: 'GET',
+      headers: {
+        'x-api-key': API_KEY
+      }
+    });
+
+    // Check if response is successful
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // Check API response status
+    if (data.status === 'ok') {
+      console.log('✓ Success!');
+      console.log('Response data:', data.data);
+      return data.data;
+    } else {
+      console.error('✗ API Error:', data.error || 'Unknown error');
+      return null;
+    }
+
+  } catch (error) {
+    console.error('✗ Request failed:', error.message);
+    return null;
+  }
+}
+
+// Run the example
+callUnicodeCharacterLookupAPI()
+  .then(result => {
+    if (result) {
+      console.log('\n📊 Final Result:');
+      console.log(JSON.stringify(result, null, 2));
+    }
+  });
