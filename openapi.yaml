@@ -1,39 +1,42 @@
 openapi: 3.0.4
 info:
   title: Unicode Character Lookup
-  description: Unicode Character Lookup is a tool for retrieving detailed information about Unicode characters. It provides codepoint, UTF-16 encoding, category, and emoji name information.
+  description: >-
+    Unicode Character Lookup is a tool for retrieving detailed information about
+    Unicode characters. It provides codepoint, UTF-16 encoding, category, and
+    emoji name information.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/unicodelookup:
     get:
       summary: Lookup Character
-      description: Unicode Character Lookup is a tool for retrieving detailed information about Unicode characters. It provides codepoint, UTF-16 encoding, category, and emoji name information.
+      description: Get detailed information about a Unicode character
       operationId: unicodelookup
       parameters:
-      - name: character
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The Unicode character to lookup
-        example: "\U0001F44B"
-      - name: codepoint
-        in: query
-        schema:
-          type: string
-        required: false
-        description: The Unicode codepoint in hex (e.g., '1F44B' or 'U+1F44B')
-        example: 1F44B
+        - name: character
+          in: query
+          schema:
+            type: string
+          required: false
+          description: The Unicode character to lookup
+          example: 👋
+        - name: codepoint
+          in: query
+          schema:
+            type: string
+          required: false
+          description: The Unicode codepoint in hex (e.g., '1F44B' or 'U+1F44B')
+          example: 1F44B
       responses:
         '200':
           description: Successful Response
@@ -49,11 +52,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   character: �
                   codepoint: U+D83D
@@ -61,13 +64,13 @@ paths:
                   hex: D83D
                   utf16: \uD83D
                   category: Control
-                  name: 
+                  name: null
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -75,4 +78,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
