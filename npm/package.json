@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/unicodelookup",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Unicode Character Lookup is a tool for retrieving detailed information about Unicode characters. It provides codepoint, UTF-16 encoding, category, and emoji name information.",
   "main": "index.js",
   "types": "index.d.ts",
