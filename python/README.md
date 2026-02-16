@@ -44,7 +44,10 @@ from apiverve_unicodecharacterlookup.apiClient import UnicodelookupAPIClient
 # Initialize the client with your APIVerve API key
 api = UnicodelookupAPIClient("[YOUR_API_KEY]")
 
-query = { "character": "👋", "codepoint": "1F44B" }
+query = {
+    "character": "👋",
+    "codepoint": "1F44B"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "character": "👋", "codepoint": "1F44B" }
+query = {
+    "character": "👋",
+    "codepoint": "1F44B"
+}
 ```
 
 ###### Simple Request
@@ -126,7 +132,10 @@ from apiverve_unicodecharacterlookup.apiClient import UnicodelookupAPIClient, Un
 
 api = UnicodelookupAPIClient("[YOUR_API_KEY]")
 
-query = { "character": "👋", "codepoint": "1F44B" }
+query = {
+    "character": "👋",
+    "codepoint": "1F44B"
+}
 
 try:
     result = api.execute(query)
@@ -147,7 +156,10 @@ from apiverve_unicodecharacterlookup.apiClient import UnicodelookupAPIClient, Un
 
 api = UnicodelookupAPIClient("[YOUR_API_KEY]")
 
-query = { "character": "👋", "codepoint": "1F44B" }
+query = {
+    "character": "👋",
+    "codepoint": "1F44B"
+}
 
 try:
     result = api.execute(query)
@@ -181,7 +193,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_unicodecharacterlookup.apiClient import UnicodelookupAPIClient, UnicodelookupAPIClientError
 
-query = { "character": "👋", "codepoint": "1F44B" }
+query = {
+    "character": "👋",
+    "codepoint": "1F44B"
+}
 
 # Using context manager ensures proper cleanup
 with UnicodelookupAPIClient("[YOUR_API_KEY]") as api:
@@ -207,7 +222,10 @@ from apiverve_unicodecharacterlookup.apiClient import UnicodelookupAPIClient
 # Enable debug mode
 api = UnicodelookupAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "character": "👋", "codepoint": "1F44B" }
+query = {
+    "character": "👋",
+    "codepoint": "1F44B"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -222,8 +240,12 @@ from apiverve_unicodecharacterlookup.apiClient import UnicodelookupAPIClient
 
 api = UnicodelookupAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "character": "👋",
+    "codepoint": "1F44B"
+}
+
 try:
-    query = { "character": "👋", "codepoint": "1F44B" }
     result = api.execute(query)
     print(result)
 finally:
