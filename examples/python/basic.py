@@ -17,11 +17,14 @@ def call_unicodelookup_api():
     Make a GET request to the Unicode Character Lookup API
     """
     try:
+        # Query parameters
+        params &#x3D; {&#x27;character&#x27;: &#x27;👋&#x27;, &#x27;codepoint&#x27;: &#x27;1F44B&#x27;}
+
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers)
+        response = requests.get(API_URL, headers=headers, params=params)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
