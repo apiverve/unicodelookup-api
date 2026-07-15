@@ -30,7 +30,7 @@ class unicodelookupWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/unicodelookup';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"character":{"type":"string","required":false},"codepoint":{"type":"string","required":false}};
+        this.validationRules = {"character":{"type":"string","required":true},"codepoint":{"type":"string","required":false}};
     }
 
     /**
