@@ -27,7 +27,7 @@ paths:
           in: query
           schema:
             type: string
-          required: false
+          required: true
           description: The Unicode character to lookup
           example: 👋
         - name: codepoint
