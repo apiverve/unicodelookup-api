@@ -25,6 +25,9 @@ namespace APIVerve.API.UnicodeCharacterLookup
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -36,7 +39,7 @@ namespace APIVerve.API.UnicodeCharacterLookup
         public string Codepoint { get; set; }
 
         [JsonProperty("decimal")]
-        public long Decimal { get; set; }
+        public long? Decimal { get; set; }
 
         [JsonProperty("hex")]
         public string Hex { get; set; }
@@ -49,5 +52,17 @@ namespace APIVerve.API.UnicodeCharacterLookup
 
         [JsonProperty("name")]
         public object Name { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
