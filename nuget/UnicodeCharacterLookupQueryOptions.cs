@@ -11,13 +11,13 @@ namespace APIVerve.API.UnicodeCharacterLookup
     public class UnicodeCharacterLookupQueryOptions
     {
         /// <summary>
-        /// The Unicode character to lookup
+        /// The Unicode character to lookup. Supply either character or codepoint.
         /// </summary>
         [JsonProperty("character")]
         public string Character { get; set; }
 
         /// <summary>
-        /// The Unicode codepoint in hex (e.g., '1F44B' or 'U+1F44B')
+        /// The Unicode codepoint in hex (e.g., '1F44B' or 'U+1F44B'). Supply either character or codepoint.
         /// </summary>
         [JsonProperty("codepoint")]
         public string Codepoint { get; set; }
