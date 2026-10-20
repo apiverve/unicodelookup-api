@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Unicode Character Lookup
   description: >-
-    Unicode Character Lookup is a tool for retrieving detailed information about
-    Unicode characters. It provides codepoint, UTF-16 encoding, category, and
-    emoji name information.
+    Unicode Character Lookup is a Unicode lookup API that inspects any
+    character, symbol or hex codepoint to find its decimal value, hex notation,
+    and UTF-16 encoding. The response also identifies the character category and
+    supplies names for emoji.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/unicodelookup:
     get:
-      summary: Lookup Character
+      summary: Unicode Character Lookup
       description: Get detailed information about a Unicode character
       operationId: unicodelookup
       parameters:
@@ -27,15 +28,19 @@ paths:
           in: query
           schema:
             type: string
-          required: true
-          description: The Unicode character to lookup
+          required: false
+          description: >-
+            The Unicode character to lookup. Supply either character or
+            codepoint.
           example: 👋
         - name: codepoint
           in: query
           schema:
             type: string
           required: false
-          description: The Unicode codepoint in hex (e.g., '1F44B' or 'U+1F44B')
+          description: >-
+            The Unicode codepoint in hex (e.g., '1F44B' or 'U+1F44B'). Supply
+            either character or codepoint.
           example: 1F44B
       responses:
         '200':
