@@ -1,0 +1,49 @@
+{
+    "name": "apiverve/unicodelookup",
+    "description": "Unicode Character Lookup is a Unicode lookup API that inspects any character, symbol or hex codepoint to find its decimal value, hex notation, and UTF-16 encoding. The response also identifies the character category and supplies names for emoji.",
+    "version": "1.2.2",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "APIVerve",
+            "email": "hello@apiverve.com",
+            "homepage": "https://apiverve.com"
+        }
+    ],
+    "keywords": [
+        "api",
+        "apiverve",
+        "unicodelookup",
+        "unicode character lookup",
+        "unicode api",
+        "unicode lookup",
+        "character lookup",
+        "unicode symbol lookup"
+    ],
+    "homepage": "https://apiverve.com/marketplace/unicodelookup?utm_source=php&utm_medium=referral&utm_content=homepage",
+    "support": {
+        "email": "hello@apiverve.com",
+        "docs": "https://docs.apiverve.com/ref/unicodelookup",
+        "source": "https://github.com/apiverve/unicodelookup-API/tree/main/php"
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "APIVerve\\Unicodelookup\\": "php/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "APIVerve\\Unicodelookup\\Tests\\": "php/tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
