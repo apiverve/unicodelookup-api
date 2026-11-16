@@ -4,6 +4,6 @@ require_relative "apiverve_unicodelookup/client"
 
 module APIVerve
   module Unicodelookup
-    VERSION = "1.2.5"
+    VERSION = "1.2.6"
   end
 end
